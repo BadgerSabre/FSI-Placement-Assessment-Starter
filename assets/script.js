@@ -25,53 +25,51 @@ let sugarMinusBtn = document.querySelector('#minus-sugar')
 // Code to update name display
 credit.textContent = `Created by ${yourName}`
 
+function updateTotal(){
+    total = gb + cc + sugar
+    tableTotal.textContent = total
+}
+
+
 // Event listener for clicks on the "+" button for Gingerbread cookies
 gbPlusBtn.addEventListener('click', function() {
     gb = gb + 1
-    total = gb + cc + sugar
+    updateTotal()
     gbQuantity.textContent = gb
-    tableTotal.textContent = total
 })
 
 gbMinusBtn.addEventListener(`click`,function() {
     if(gb > 0){
         gb = gb - 1
-        total = gb + cc + sugar
+        updateTotal()
         gbQuantity.textContent = gb
-        tableTotal.textContent = total
     }
 })
 
 ccPlusBtn.addEventListener('click', function() {
     cc = cc + 1
-    total = gb + cc + sugar
+    updateTotal()
     ccQuantity.textContent = cc
-    tableTotal.textContent = total
 })
 
 ccMinusBtn.addEventListener(`click`,function() {
     if(cc > 0){
         cc = cc - 1
-        total = gb + cc + sugar
+        updateTotal()
         ccQuantity.textContent = cc
-        tableTotal.textContent = total
     }
 })
 
 sugarPlusBtn.addEventListener('click', function() {
     sugar = sugar + 1
-    total = gb + cc + sugar
+    updateTotal()
     sugarQuantity.textContent = sugar
-    tableTotal.textContent = total
 })
 
 sugarMinusBtn.addEventListener(`click`,function() {
     if(sugar > 0){
         sugar = sugar - 1
-        total = gb + cc + sugar
+        updateTotal()
         sugarQuantity.textContent = sugar
-        tableTotal.textContent = total
     }
 })
-
-// TODO: Hook up event listeners for the rest of the buttons
