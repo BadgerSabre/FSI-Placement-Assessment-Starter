@@ -1,20 +1,14 @@
+let yourName = "Brandon Dega"
 
-// First, tell us your name
-let yourName = "Brandon Dega" // HINT: Replace this with your own name!
-
-// We'll use these variables to track the counts of each cookie type
-let gb = 0 // Gingerbread
-let cc = 0 // Chocolate Chip
-let sugar = 0 // Sugar Sprinkle
+let gb = 0
+let cc = 0
+let sugar = 0
 let total = 0
 let gbQuantity = document.querySelector(`#qty-gb`)
 let ccQuantity = document.querySelector(`#qty-cc`)
 let sugarQuantity = document.querySelector(`#qty-sugar`)
 let tableTotal = document.querySelector(`#qty-total`)
 
-// selecting the element with an id of credit
-const credit = document.querySelector('#credit')
-// selecting the element with an id of add-gb
 let gbPlusBtn = document.querySelector('#add-gb')
 let gbMinusBtn = document.querySelector('#minus-gb')
 let ccPlusBtn = document.querySelector('#add-cc')
@@ -22,16 +16,20 @@ let ccMinusBtn = document.querySelector('#minus-cc')
 let sugarPlusBtn = document.querySelector('#add-sugar')
 let sugarMinusBtn = document.querySelector('#minus-sugar')
 
-// Code to update name display
-credit.textContent = `Created by ${yourName}`
+let buttons = [
+    gbPlusBtn,
+    gbMinusBtn,
+    ccPlusBtn,
+    ccMinusBtn,
+    sugarPlusBtn,
+    sugarMinusBtn
+]
 
 function updateTotal(){
     total = gb + cc + sugar
     tableTotal.textContent = total
 }
 
-
-// Event listener for clicks on the "+" button for Gingerbread cookies
 gbPlusBtn.addEventListener('click', function() {
     gb = gb + 1
     updateTotal()
